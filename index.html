@@ -46,16 +46,16 @@
         <nav class="navbar navbar-dark bg-inverse navbar-full" id="nav-main">            
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#cover">Home <span class="sr-only">(current)</span></a>
+                    <a id="button-home" class="nav-link" href="#cover">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#servicos">Serviços</a>
+                    <a id="button-servicos" class="nav-link" href="#servicos">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Sobre</a>
+                    <a id="button-about" class="nav-link" href="#about">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contato">Contato</a>
+                    <a id="button-contato" class="nav-link" href="#contato">Contato</a>
                 </li>
             </ul>
             <form class="form-inline pull-sm-right">
@@ -71,8 +71,6 @@
                 <div class="container">
 
                     <h3>Serviços Prestados</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero placeat debitis ad vitae repudiandae architecto, ipsum tenetur odio animi nulla nihil deleniti voluptatibus et in incidunt consequuntur! Assumenda, suscipit, sunt!</p>
-
                     <hr>
 
                     <div class="row">
@@ -86,7 +84,7 @@
                                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
                                 </div>
-                                <div class="card card-block">
+                                <div class="card card-block bg-inverse" style="background-color: lightcoral;">
                                     <blockquote class="card-blockquote">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                                         <footer>
@@ -103,16 +101,6 @@
                                         <p class="card-text">Acreditamos que um bom trabalho deve ser feito a qualquer momento. Especilamente quando você mais precisa.</p>
                                         <p class="card-text"><small class="text-muted">informações de plantão</small></p>
                                     </div>
-                                </div>
-                                <div class="card card-block card-inverse text-xs-center" style="background-color: lightcoral">
-                                    <blockquote class="card-blockquote">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                                        <footer>
-                                            <small>
-                                                Someone famous in <cite title="Source Title">Source Title</cite>
-                                            </small>
-                                        </footer>
-                                    </blockquote>
                                 </div>
                                 <div class="card card-block text-xs-center">
                                     <h4 class="card-title">Ortodontia</h4>
@@ -411,15 +399,51 @@
                 });
             });
 
-            $("a").click(function() {
-                var href= $(this).attr('href');
+            //generic call
+            //            $("a").click(function() {
+            //                var href= $(this).attr('href');
+            //                $('html, body').animate({
+            //                    scrollTop: $(href).offset().top
+            //                }, 1400);
+            //                
+            //                
+            //                $(this).addClass( "nav-item-active" );
+            //
+            //            });
+
+            //            scrolling smothlly to home cover
+            $("#button-home").click(function() {
+                var href= '#cover';
                 $('html, body').animate({
                     scrollTop: $(href).offset().top
                 }, 1400);
-                
-                
+
                 $(this).addClass( "nav-item-active" );
 
+            });
+
+            //            scrolling smothlly to servicos
+            $("#button-servicos").click(function() {
+                var href= '#servicos';
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top - 5
+                }, 1400);
+            });
+
+            //            scrolling smothlly to sobre
+            $("#button-about").click(function() {
+                var href= '#about';
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top - 200
+                }, 1400);
+            });
+
+            //            scrolling smothlly to contato
+            $("#button-contato").click(function() {
+                var href= '#contato';
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top - 50
+                }, 1400);
             });
 
         </script>
