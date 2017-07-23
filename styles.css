@@ -1,0 +1,104 @@
+/*
+STYLES.CSS
+
+Course:  Bootstrap 4 Quick Start
+Author:  Brad Hussey
+Website: bradhussey.ca
+*/
+
+html,
+
+body {
+    height: 100%;
+    position: relative; 
+}
+
+img {
+    max-width: 100%;
+}
+
+/* font */
+.display-3{
+    font-size: 7vw;
+}
+
+p {
+    font-size: 2vmin;
+}
+
+/* cover */
+
+#cover {
+    background: #222 url('img/stars.jpg') center center no-repeat;
+    background-size: cover;
+    color: lightcoral;
+    height: 94.5%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#cover-caption {
+    width: 42%;
+}
+
+.section-content {
+    padding: 5rem 0;
+}
+
+/* contato */
+
+.contatos{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#about {
+    background: url('img/girlincar.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.about-text {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 1.875rem;
+}
+
+#footer-main {
+    background: #222;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2.5rem 0;
+}
+
+/* buttons*/
+
+.btn-busca{
+    border-color: lightcoral; 
+    color: lightcoral;
+}
+
+.btn-coral {
+    background-color: lightcoral;
+    color: white;
+}
+
+.btn-roll{
+    border-color: lightcoral;
+    color: lightcoral;
+    border-radius: .2rem;
+    background-color: transparent;
+}
+
+.btn-roll:hover{
+    border-color: lightcoral;
+    color: white;
+    background-color: lightcoral;
+    border-radius: .2rem;
+}
+
+/*footer*/
+.footer-name{
+    color: lightcoral;
+    margin-top: 60px;
+}
