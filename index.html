@@ -36,7 +36,7 @@
                         </form>
                         <br>
 
-                        <a href="#about" class="btn btn-roll btn-sm" role="button">&darr;</a>
+                        <a href="#about" class="btn btn-roll btn-sm" id="btn-roll" role="button">&darr;</a>
                     </div>
                 </div>
             </div>
@@ -334,6 +334,7 @@
                                 <h4 class="card-title">Como chegar</h4>
 
                                 <p>Rua Satnto Antonio, 244. Uberaba - MG - Centro</p>
+                                <a href="https://www.google.com.br/maps/place/R.+Santo+Ant%C3%B4nio,+244+-+Centro,+Uberaba+-+MG/@-19.7523202,-47.9372466,17z/data=!3m1!4b1!4m5!3m4!1s0x94bad03113c863c3:0x91a2eb09b07c102a!8m2!3d-19.752325!4d-47.935057" target="_blank" class="btn btn-roll">Ver no mapa</a>
 
                                 <p class="sr-only card-text"><small class="text-muted">mapa</small></p>
 
@@ -349,7 +350,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-lg-4">
-                        <h7>© 2017 DRA PAMELA BRUDER SA - TODOS OS DIREITOS RESERVADOS</h7>
+                        <h7>© 2017 todos os direitos reservados - DRA PAMELA BRUDER SA</h7>
                         <br><br>
                         <h7>Developed by <a href="http://www.facebook.com/renatosistemas">Renato Rodrigues</a></h7>
                         <br>
@@ -411,6 +412,9 @@
             //
             //            });
 
+
+
+
             //            scrolling smothlly to home cover
             $("#button-home").click(function() {
                 var href= '#cover';
@@ -424,10 +428,12 @@
 
             //            scrolling smothlly to servicos
             $("#button-servicos").click(function() {
-                var href= '#servicos';
-                $('html, body').animate({
-                    scrollTop: $(href).offset().top - 5
-                }, 1400);
+                goToServicos();
+            });
+
+            //            scrolling smothlly to servicos
+            $("#btn-roll").click(function() {
+                goToServicos();
             });
 
             //            scrolling smothlly to sobre
@@ -445,6 +451,13 @@
                     scrollTop: $(href).offset().top - 50
                 }, 1400);
             });
+
+            function goToServicos() {
+                var href= '#servicos';
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top - 5
+                }, 1400);
+            }
 
         </script>
     </body>
