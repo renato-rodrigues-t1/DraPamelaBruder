@@ -73,11 +73,6 @@ p {
 
 /* buttons*/
 
-.btn-busca{
-    border-color: lightcoral; 
-    color: lightcoral;
-}
-
 .btn-coral {
     background-color: lightcoral;
     color: white;
@@ -103,6 +98,11 @@ p {
     margin-top: 60px;
 }
 
-textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-    input:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-    input:focus {
     border-color: lightcoral;
+}
+
+textarea:focus { 
+    outline: none !important;
+    border-color: lightcoral !important;
 }
