@@ -61,7 +61,7 @@
                 </li>
             </ul>
             <form class="form-inline pull-sm-right">
-                <input class="form-control bg-inverse" type="text" placeholder="" style="border-color: lightcoral;">
+                <input class="form-control bg-inverse" type="search" placeholder="" style="border-color: lightcoral;">
                 <button class="btn bg-inverse btn-busca" type="submit">Buscar</button>
 
             </form>
@@ -89,7 +89,7 @@
                                 <div class="card card-block bg-inverse" style="background-color: lightcoral;">
                                     <blockquote class="card-blockquote">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        
+
                                     </blockquote>
                                 </div>
                                 <div class="card">
@@ -261,71 +261,74 @@
                 <div class="container">
 
                     <div class="row"  ng-app="" >
-                        <div class="col-sm-4">                           
-                            <div class="card card-block newsletter">
-                                <h4 class="card-title">Newsletter</h4>
-                                <p class="card-text">Assine nossa lista para receber sempre nossas novidades e promoções</p>
+                        <div class="col-sm-4">  
+                            <form class="form-group" name="formNewsletter" enctype="multipart/form-data" method="post" ng-submit="onFormSubmit(onFileSelect,onFileSelect)">                         
+                                <div class="card card-block newsletter">
+                                    <h4 class="card-title">Newsletter</h4>
+                                    <p class="card-text">Assine nossa lista para receber sempre nossas novidades e promoções</p>
 
-                                <div class="form-group">
-                                    <label class="sr-only">Nome</label>
-                                    <input type="text" class="form-control form-control-sm" placeholder="Nome">
+                                    <div class="form-group">
+                                        <label class="sr-only">Nome</label>
+                                        <input type="text" class="form-control form-control-sm" placeholder="Nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Email</label>
+                                        <input type="email" name="email" ng-model="email" class="form-control form-control-sm" placeholder="E-mail" required> 
+                                        <p class="card-text"><small class="text-danger" ng-show="formNewsletter.email.$error.email">Não é um email válido.</small></p>                         
+                                    </div>
+
+                                    <button type="submit" g-disabled="formNewsletter.$invalid" class="btn btn-roll btn btn-block">Cadastrar</button>                      
+
+
+                                    <p class="card-text"><small class="text-muted">* Você pode cancelar quando quiser</small></p>
                                 </div>
-                                <form class="form-group" name="cadastro">
-                                    <label class="sr-only">Email</label>
-                                    <input type="email" name="myAddress" ng-model="text" class="form-control form-control-sm" placeholder="E-mail"> 
-                                    <p class="card-text"><small class="text-muted" ng-show="cadastro.myAddress.$error.email">Não é um email válido.</small></p>                         
-                                </form>
 
-                                <button type="submit" class="btn btn-roll btn btn-block">Cadastrar</button>                      
-
-
-                                <p class="card-text"><small class="text-muted">* Você pode cancelar quando quiser</small></p>
-                            </div>
-
-                            <div class="card card-block telefones" style="text-align: center;">
-                                <h4 class="card-title">Telefones</h4>
-                                <h6 class="card-text">+55 34 3456-6754</h6>
-                                <h6 class="card-text">+55 34 3578-4569</h6>
-                            </div>
-
+                                <div class="card card-block telefones" style="text-align: center;">
+                                    <h4 class="card-title">Telefones</h4>
+                                    <h6 class="card-text">+55 34 3456-6754</h6>
+                                    <h6 class="card-text">+55 34 3578-4569</h6>
+                                </div>
+                            </form>
                         </div>
                         <div class="col-sm-8 envio">
-                            <h3>Contato</h3>
+                            <form class="form-group" name="formMEnsagem" enctype="multipart/form-data" method="post" ng-submit="onFormSubmit(onFileSelect,onFileSelect)">
+                                <h3>Contato</h3>
 
-                            <h7 class="display-7">Para enviar uma mensagem, preencha os campos abaixo e aguarde nosso retorno.</h7>
-                            <hr>
-                            <div class="form-group">
-                                <label>Nome:</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nome">
-                            </div>
-                            <form class="form-group" name="info">
-                                <label >E-mail:</label>
-                                <input type="email" name="emailInfo" ng-model="text" class="form-control form-control-sm" placeholder="E-mail" required> 
-                                <p class="card-text"><small class="text-muted" ng-show="info.emailInfo.$error.email">Não é um email válido.</small></p>                         
-                            </form> 
-                            <div class="form-group">
-                                <label>Telefone:</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Telefone">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="sel1">Assunto:</label>
-
-                                <div ng-init="assuntos=['Dúvidas','Agendamento de consultas','Elogios', 'Reclamações']">
-                                    <select class="form-control" id="sel1">
-                                        <option ng-repeat= "x in assuntos"> {{ x }} </option>
-                                    </select>
+                                <h7 class="display-7">Para enviar uma mensagem, preencha os campos abaixo e aguarde nosso retorno.</h7>
+                                <hr>
+                                <div class="form-group">
+                                    <label>Nome:</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Nome" name="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label >E-mail:</label>
+                                    <input type="email" name="email" ng-model="email2" class="form-control form-control-sm" placeholder="E-mail" required> 
+                                    <p class="card-text"><small class="text-danger" ng-show="formMEnsagem.email.$error.email">Não é um email válido.</small></p>                         
+                                </div> 
+                                <div class="form-group">
+                                    <label>Telefone:</label>
+                                    <input type= "number" class="form-control form-control-sm" placeholder="Telefone" required>
                                 </div>
 
-                            </div>
+                                <div class="form-group">
+                                    <label for="sel1">Assunto:</label>
 
-                            <div class="form-group">
-                                <label for="comment">Mensagem:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
-                            </div>
+                                    <div ng-init="assuntos=['Dúvidas','Agendamento de consultas','Elogios', 'Reclamações']">
+                                        <select class="form-control" id="sel1">
+                                            <option ng-repeat= "x in assuntos"> {{ x }} </option>
+                                        </select>
+                                    </div>
 
-                            <button type="submit" class="btn btn-roll btn-lg btn-block">Enviar</button>
-                            <br>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="comment">Mensagem:</label>
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                </div>
+
+                                <button type="submit" ng-disabled="formMEnsagem.$invalid" class="btn btn-roll btn-lg btn-block">Enviar</button>
+                                <br>
+                            </form>
 
                         </div>
 
