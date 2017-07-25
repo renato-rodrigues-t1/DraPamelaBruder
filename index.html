@@ -89,11 +89,7 @@
                                 <div class="card card-block bg-inverse" style="background-color: lightcoral;">
                                     <blockquote class="card-blockquote">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        <footer>
-                                            <small class="text-muted">
-                                                Someone famous in <cite title="Source Title">Source Title</cite>
-                                            </small>
-                                        </footer>
+                                        
                                     </blockquote>
                                 </div>
                                 <div class="card">
@@ -264,7 +260,7 @@
             <div class="section-content">
                 <div class="container">
 
-                    <div class="row">
+                    <div class="row"  ng-app="" >
                         <div class="col-sm-4">                           
                             <div class="card card-block newsletter">
                                 <h4 class="card-title">Newsletter</h4>
@@ -274,10 +270,11 @@
                                     <label class="sr-only">Nome</label>
                                     <input type="text" class="form-control form-control-sm" placeholder="Nome">
                                 </div>
-                                <div class="form-group">
+                                <form class="form-group" name="cadastro">
                                     <label class="sr-only">Email</label>
-                                    <input type="text" class="form-control form-control-sm" placeholder="E-mail">                            
-                                </div>
+                                    <input type="email" name="myAddress" ng-model="text" class="form-control form-control-sm" placeholder="E-mail"> 
+                                    <p class="card-text"><small class="text-muted" ng-show="cadastro.myAddress.$error.email">Não é um email válido.</small></p>                         
+                                </form>
 
                                 <button type="submit" class="btn btn-roll btn btn-block">Cadastrar</button>                      
 
@@ -287,8 +284,8 @@
 
                             <div class="card card-block telefones" style="text-align: center;">
                                 <h4 class="card-title">Telefones</h4>
-                                <p class="card-text">+55 34 3456-6754</p>
-                                <p class="card-text">+55 34 3578-4569</p>
+                                <h6 class="card-text">+55 34 3456-6754</h6>
+                                <h6 class="card-text">+55 34 3578-4569</h6>
                             </div>
 
                         </div>
@@ -301,10 +298,11 @@
                                 <label>Nome:</label>
                                 <input type="text" class="form-control form-control-sm" placeholder="Nome">
                             </div>
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="E-mail">
-                            </div>  
+                            <form class="form-group" name="info">
+                                <label >E-mail:</label>
+                                <input type="email" name="emailInfo" ng-model="text" class="form-control form-control-sm" placeholder="E-mail" required> 
+                                <p class="card-text"><small class="text-muted" ng-show="info.emailInfo.$error.email">Não é um email válido.</small></p>                         
+                            </form> 
                             <div class="form-group">
                                 <label>Telefone:</label>
                                 <input type="text" class="form-control form-control-sm" placeholder="Telefone">
@@ -313,9 +311,9 @@
                             <div class="form-group">
                                 <label for="sel1">Assunto:</label>
 
-                                <div ng-app="" ng-init="assuntos=['Dúvidas','Agendamento de consultas','Elogios', 'Reclamações']">
+                                <div ng-init="assuntos=['Dúvidas','Agendamento de consultas','Elogios', 'Reclamações']">
                                     <select class="form-control" id="sel1">
-                                        <option ng-repeat= "x in assuntos"> {{ x}} </option>
+                                        <option ng-repeat= "x in assuntos"> {{ x }} </option>
                                     </select>
                                 </div>
 
